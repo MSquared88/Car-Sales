@@ -10,11 +10,6 @@ import { removeFeature } from "../actions";
 
 
 const AddedFeatures = props => {
-  // dipsatch an action here to remove an item
-  const removeFeature = item => {
-    props.removeFeature(item)
-  };
-
 
   return (
     <div className="content">
@@ -22,7 +17,7 @@ const AddedFeatures = props => {
       {props.state.car.features.length ? (
         <ol type="1">
           {props.state.car.features.map(item => (
-            <AddedFeature key={item.id} feature={item} removeFeature={removeFeature}/>
+            <AddedFeature key={item.id} feature={item} />
           ))}
         </ol>
       ) : (
@@ -39,4 +34,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {removeFeature})(AddedFeatures);
+export default connect(mapStateToProps, {})(AddedFeatures);
